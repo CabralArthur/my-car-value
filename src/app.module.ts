@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ReportsModule } from './reports/reports.module';
 import { User } from './users/user.entity';
+import { Report } from './reports/report.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { User } from './users/user.entity';
       port: 9192,
       database: 'pedroarthur',
       username: 'pedroarthur',
-      entities: [User],
+      entities: [User, Report],
+      synchronize: true,
     }),
     UsersModule,
     ReportsModule,
